@@ -1,6 +1,19 @@
 # Watcher of Friends Online
 
-[TODO. There will be project description]
+At startup, the script asks for the username and password of the user and displays the names and surnames of those of his friends who are online.
+
+Before the first start, you must register your application at https://vk.com/dev and obtain "Application ID". Change the variable `APP_ID` in the source code.
+
+# Example of usage:
+
+```bash
+$ python vk_friends_online.py
+Login: mail@mail.com
+Password:
+Online users:
+ User Name
+ User2 Name2
+```
 
 # How to Install
 
