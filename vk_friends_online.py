@@ -13,7 +13,7 @@ def get_user_password():
     return getpass.getpass()
 
 
-def get_online_friends(login, password):
+def get_online_friends(login, password, api_version='5.35'):
     try:
         session = vk.AuthSession(
             app_id=APP_ID,
@@ -21,7 +21,7 @@ def get_online_friends(login, password):
             user_password=password,
             scope='friends'
         )
-        api = vk.API(session, v='5.35')
+        api = vk.API(session, v=api_version)
         friends_online_ids = api.friends.getOnline()
         return api.users.get(user_ids=friends_online_ids)
     except vk.exceptions.VkAuthError:
